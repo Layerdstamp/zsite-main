@@ -272,13 +272,14 @@
     var closeBtn = document.getElementById('closeStory');
 
     // Build bubbles with cover photos
-    destinations.forEach(function(dest) {
+    destinations.forEach(function(dest, idx) {
       var bubble = document.createElement('div');
       bubble.className = 'story-bubble';
+      var lazy = idx > 5 ? ' loading="lazy"' : '';
       bubble.innerHTML =
         '<div class="story-ring">' +
           '<div class="story-circle">' +
-            '<img src="' + dest.cover + '" alt="' + dest.name + '">' +
+            '<img src="' + dest.cover + '" alt="' + dest.name + '" decoding="async"' + lazy + '>' +
           '</div>' +
         '</div>' +
         '<span class="story-label">' + dest.name + '</span>';
@@ -303,12 +304,12 @@
       if (n === 5) {
         var wide = document.createElement('div');
         wide.className = 'collage-slot wide';
-        wide.innerHTML = '<img src="' + photos[0] + '" alt="' + dest.name + '">';
+        wide.innerHTML = '<img src="' + photos[0] + '" alt="' + dest.name + '" loading="lazy" decoding="async">';
         storyCollage.appendChild(wide);
         for (var i = 1; i < n; i++) {
           var slot = document.createElement('div');
           slot.className = 'collage-slot';
-          slot.innerHTML = '<img src="' + photos[i] + '" alt="' + dest.name + '">';
+          slot.innerHTML = '<img src="' + photos[i] + '" alt="' + dest.name + '" loading="lazy" decoding="async">';
           storyCollage.appendChild(slot);
         }
         overlay.classList.add('active');
@@ -321,7 +322,7 @@
       for (var j = 0; j < n; j++) {
         var s = document.createElement('div');
         s.className = 'collage-slot';
-        s.innerHTML = '<img src="' + photos[j] + '" alt="' + dest.name + '">';
+        s.innerHTML = '<img src="' + photos[j] + '" alt="' + dest.name + '" loading="lazy" decoding="async">';
         storyCollage.appendChild(s);
       }
       overlay.classList.add('active');

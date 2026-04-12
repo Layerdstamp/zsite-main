@@ -151,7 +151,7 @@
         card.className = 'album-card';
         card.style.zIndex = photos.length - i;
         if (i > 0) card.style.opacity = '0';
-        card.innerHTML = '<img src="' + src + '" alt="Photo ' + (i+1) + '">';
+        card.innerHTML = '<img src="' + src + '" alt="Photo ' + (i+1) + '" loading="lazy" decoding="async">';
         albumScreen.insertBefore(card, albumCounter);
         cards.push(card);
       });
