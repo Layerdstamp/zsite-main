@@ -163,22 +163,12 @@
       max-height:75vh; overflow-y:auto;
       padding:4px;
     }
-    .story-collage.cols-3 {
-      grid-template-columns:1fr 1fr 1fr;
-    }
     .story-collage .collage-slot {
       aspect-ratio:3/4; border-radius:6px; overflow:hidden;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.06);
-    }
-    .story-collage .collage-slot.center-last {
-      grid-column: 1 / -1;
-      max-width:calc(50% - 6px);
-      margin:0 auto;
     }
     .story-collage .collage-slot img {
       display:block; width:100%; height:100%;
-      object-fit:cover; object-position:center 25%;
+      object-fit:cover; object-position:center 20%;
     }
     .collage-placeholder {
       font-size:.7rem; color:rgba(255,255,255,.12);
@@ -201,8 +191,6 @@
       .story-ring { width:60px; height:60px; }
       .story-label { font-size:.55rem; max-width:60px; }
       .story-collage { max-width:95vw; gap:8px; }
-      .story-collage.cols-3 { grid-template-columns:1fr 1fr; }
-      .story-collage .collage-slot.center-last { max-width:calc(50% - 4px); }
       .page-nav { padding:max(28px, env(safe-area-inset-top, 28px)) 20px 14px; }
       .page-nav .nav-links { gap:14px; }
       .page-nav .nav-links a { font-size:.55rem; }
@@ -303,20 +291,10 @@
       storyCollage.className = 'story-collage';
 
       var photos = dest.photos;
-      var n = photos.length;
 
-      // 3 photos: use 3-column layout
-      if (n === 3) {
-        storyCollage.classList.add('cols-3');
-      }
-
-      // All layouts: uniform grid, center last photo if odd count in 2-col
-      for (var j = 0; j < n; j++) {
+      for (var j = 0; j < photos.length; j++) {
         var s = document.createElement('div');
         s.className = 'collage-slot';
-        if (n !== 3 && n % 2 === 1 && j === n - 1) {
-          s.classList.add('center-last');
-        }
         s.innerHTML = '<img src="' + photos[j] + '" alt="' + dest.name + '" loading="lazy" decoding="async">';
         storyCollage.appendChild(s);
       }
