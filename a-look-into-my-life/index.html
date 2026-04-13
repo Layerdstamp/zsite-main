@@ -208,80 +208,6 @@
       .travel-section:hover .travel-text p { color:rgba(255,255,255,.4); }
     }
 
-    /* ── SEE MORE OF ME ──────────────────────── */
-    .see-more-section {
-      display:block; text-decoration:none;
-      border-radius:14px; overflow:hidden;
-      position:relative;
-      margin-bottom:60px;
-      cursor:pointer;
-    }
-    .see-more-photos {
-      display:flex; gap:4px;
-      height:220px;
-    }
-    .see-more-photos .photo-strip {
-      flex:1; overflow:hidden; position:relative;
-    }
-    .see-more-photos .photo-strip img {
-      width:100%; height:100%; object-fit:cover;
-      filter:blur(4px) brightness(.5);
-      transform:scale(1.15);
-      transition:filter .8s, transform .8s;
-    }
-    .see-more-overlay {
-      position:absolute; inset:0;
-      display:flex; flex-direction:column;
-      align-items:center; justify-content:center;
-      z-index:2;
-      background:linear-gradient(180deg,
-        rgba(0,0,0,.3) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.3) 100%);
-      transition:background .6s;
-    }
-    .see-more-overlay h2 {
-      font-family:'Playfair Display', serif;
-      font-size:1.3rem; font-weight:400;
-      letter-spacing:.3em; text-transform:uppercase;
-      color:rgba(255,255,255,.85);
-      margin-bottom:10px;
-      transition:letter-spacing .5s;
-    }
-    .see-more-overlay .see-more-line {
-      width:40px; height:1px; margin-bottom:14px;
-      background:rgba(180,220,240,.4);
-      transition:width .5s;
-    }
-    .see-more-overlay p {
-      font-size:.72rem; letter-spacing:.15em;
-      color:rgba(255,255,255,.35);
-      font-style:italic;
-      transition:color .5s;
-    }
-    .see-more-peek {
-      position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
-      z-index:3;
-      display:flex; gap:6px;
-      opacity:.3; transition:opacity .5s;
-    }
-    .see-more-section:active .see-more-overlay {
-      background:linear-gradient(180deg,
-        rgba(0,0,0,.15) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.15) 100%);
-    }
-    @media(hover:hover){
-      .see-more-section:hover .photo-strip img { filter:blur(1.3px) brightness(.65); transform:scale(1.05); }
-      .see-more-section:hover .see-more-overlay {
-        background:linear-gradient(180deg,
-          rgba(0,0,0,.15) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.15) 100%);
-      }
-      .see-more-section:hover .see-more-overlay h2 { letter-spacing:.4em; }
-      .see-more-section:hover .see-more-overlay .see-more-line { width:70px; }
-      .see-more-section:hover .see-more-overlay p { color:rgba(255,255,255,.55); }
-      .see-more-section:hover .see-more-peek { opacity:.6; }
-    }
-    .see-more-peek span {
-      width:5px; height:5px; border-radius:50%;
-      background:rgba(180,220,240,.5);
-    }
 
     .page-footer {
       position:relative; z-index:5;
@@ -300,8 +226,6 @@
       .blog-trio { gap:0; flex-wrap:wrap; }
       .blog-btn { max-width:140px; min-width:90px; padding:22px 10px; }
       .blog-btn .btn-label { font-size:.6rem; letter-spacing:.12em; }
-      .see-more-photos { height:160px; }
-      .see-more-overlay h2 { font-size:1rem; }
       .page-nav { padding:max(28px, env(safe-area-inset-top, 28px)) 20px 14px; }
       .page-nav .nav-links { gap:14px; }
       .page-nav .nav-links a { font-size:.55rem; }
@@ -387,23 +311,6 @@
       </div>
     </a>
 
-    <!-- See More of Me: photo teaser strip -->
-    <a class="see-more-section" href="see-more-of-me/">
-      <div class="see-more-photos">
-        <div class="photo-strip"><img src="../assets/images/bio/facecard/facecard-1.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="photo-strip"><img src="../assets/images/bio/facecard/facecard-2.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="photo-strip"><img src="../assets/images/bio/facecard/facecard-3.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="photo-strip"><img src="../assets/images/bio/facecard/facecard-4.jpg" alt="" loading="lazy" decoding="async"></div>
-      </div>
-      <div class="see-more-overlay">
-        <h2>See More of Me</h2>
-        <div class="see-more-line"></div>
-        <p>tap to explore</p>
-      </div>
-      <div class="see-more-peek">
-        <span></span><span></span><span></span>
-      </div>
-    </a>
 
   </div>
 
