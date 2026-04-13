@@ -160,24 +160,22 @@
     .story-collage {
       display:grid; grid-template-columns:1fr 1fr;
       gap:12px; max-width:460px; width:90%;
-      max-height:70vh; overflow-y:auto;
+      max-height:75vh; overflow-y:auto;
       padding:4px;
     }
     .story-collage.cols-3 {
       grid-template-columns:1fr 1fr 1fr;
     }
     .story-collage .collage-slot {
-      aspect-ratio:3/4; border-radius:6px; overflow:hidden;
+      width:100%; border-radius:6px; overflow:hidden;
       background:rgba(255,255,255,.03);
       border:1px solid rgba(255,255,255,.06);
-      display:flex; align-items:center; justify-content:center;
     }
     .story-collage .collage-slot.wide {
       grid-column: span 2;
-      aspect-ratio: 3/2;
     }
     .story-collage .collage-slot img {
-      width:100%; height:100%; object-fit:cover;
+      display:block; width:100%; height:auto;
     }
     .collage-placeholder {
       font-size:.7rem; color:rgba(255,255,255,.12);
