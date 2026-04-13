@@ -88,9 +88,10 @@
 
     /* STORY BUBBLES */
     .story-row {
-      display:flex; gap:24px; flex-wrap:wrap;
+      display:flex; gap:20px; flex-wrap:wrap;
       justify-content:center;
       padding:0 10px; margin-bottom:60px;
+      max-width:100%;
     }
     .story-bubble {
       display:flex; flex-direction:column; align-items:center;
@@ -158,23 +159,22 @@
     }
     .story-collage {
       display:grid; grid-template-columns:1fr 1fr;
-      gap:10px; max-width:460px; width:90%;
-      max-height:65vh; overflow-y:auto;
+      gap:12px; max-width:460px; width:90%;
+      max-height:70vh; overflow-y:auto;
+      padding:4px;
     }
     .story-collage.cols-3 {
       grid-template-columns:1fr 1fr 1fr;
     }
     .story-collage .collage-slot {
-      aspect-ratio:1; border-radius:6px; overflow:hidden;
+      aspect-ratio:3/4; border-radius:6px; overflow:hidden;
       background:rgba(255,255,255,.03);
       border:1px solid rgba(255,255,255,.06);
       display:flex; align-items:center; justify-content:center;
-      max-height:28vh;
     }
     .story-collage .collage-slot.wide {
       grid-column: span 2;
-      aspect-ratio: 2/1;
-      max-height:28vh;
+      aspect-ratio: 3/2;
     }
     .story-collage .collage-slot img {
       width:100%; height:100%; object-fit:cover;
@@ -196,9 +196,11 @@
     @media (max-width:600px){
       .content { padding:120px 20px max(60px, env(safe-area-inset-bottom, 60px)); }
       .page-header h1 { font-size:1.4rem; letter-spacing:.25em; }
-      .story-row { gap:16px; }
-      .story-ring { width:64px; height:64px; }
-      .story-label { font-size:.55rem; max-width:64px; }
+      .story-row { gap:14px; }
+      .story-ring { width:60px; height:60px; }
+      .story-label { font-size:.55rem; max-width:60px; }
+      .story-collage { max-width:95vw; gap:8px; }
+      .story-collage.cols-3 { grid-template-columns:1fr 1fr; }
       .page-nav { padding:max(28px, env(safe-area-inset-top, 28px)) 20px 14px; }
       .page-nav .nav-links { gap:14px; }
       .page-nav .nav-links a { font-size:.55rem; }
