@@ -129,6 +129,68 @@
       color:rgba(180,220,240,.4);
     }
 
+    /* ── Library shelf ── */
+    .library-shelf { margin-bottom:50px; }
+    .shelf-label {
+      font-family:'Playfair Display', serif;
+      font-size:.72rem; letter-spacing:.35em; text-transform:uppercase;
+      color:rgba(180,220,240,.35); margin-bottom:22px;
+      padding-bottom:10px;
+      border-bottom:1px solid rgba(255,255,255,.04);
+    }
+    .entry { margin-bottom:36px; }
+    .entry-toggle {
+      display:flex; align-items:center; justify-content:space-between;
+      cursor:pointer; padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.04);
+      transition:border-color .3s;
+      user-select:none;
+    }
+    .entry-toggle:hover { border-color:rgba(255,255,255,.1); }
+    .entry-toggle h3 {
+      font-family:'Playfair Display', serif;
+      font-size:1.08rem; font-weight:400;
+      letter-spacing:.08em; color:rgba(255,255,255,.75);
+      transition:color .3s;
+    }
+    .entry-toggle:hover h3 { color:rgba(255,255,255,.95); }
+    .entry-toggle .toggle-icon {
+      font-size:.65rem; color:rgba(255,255,255,.2);
+      transition:transform .3s, color .3s;
+      flex-shrink:0; margin-left:16px;
+    }
+    .entry.open .toggle-icon { transform:rotate(45deg); color:rgba(180,220,240,.5); }
+    .entry-body {
+      max-height:0; overflow:hidden;
+      transition:max-height .45s cubic-bezier(.23,1,.32,1), opacity .35s;
+      opacity:0;
+    }
+    .entry.open .entry-body { max-height:2000px; opacity:1; }
+    .entry-body p {
+      font-size:.97rem; line-height:2;
+      color:rgba(255,255,255,.52); font-weight:300;
+      padding:18px 0 6px;
+    }
+    .entry-body p + p { padding-top:0; }
+
+    .intro-essay {
+      font-size:1rem; line-height:2.1;
+      color:rgba(255,255,255,.5); font-weight:300;
+      margin-bottom:55px; text-align:center;
+      max-width:640px; margin-left:auto; margin-right:auto;
+    }
+    .intro-essay::first-letter {
+      font-family:'Playfair Display', serif;
+      font-size:2.6rem; float:left;
+      line-height:1; margin-right:8px; margin-top:4px;
+      color:rgba(180,220,240,.35);
+    }
+
+    .shelf-divider {
+      width:40px; height:1px; margin:0 auto 50px;
+      background:linear-gradient(90deg, transparent, rgba(180,220,240,.25), transparent);
+    }
+
     .placeholder-note {
       text-align:center; padding:60px 20px;
       color:rgba(255,255,255,.2);
@@ -177,9 +239,526 @@
 
     <p class="page-intro">Writing, reflection, healing, and interior life.</p>
 
-    <div class="placeholder-note">
-      Blog posts coming soon.<br>
-      Add photos to Photos/Photo For A Look Into My Life/Spirituality/
+    <p class="intro-essay">Across cultures and across time, people have looked for deeper meaning in the patterns of life, the movement of the heavens, the repetition of numbers, the feeling of energy, and the mystery of consciousness itself. These systems offer different languages for understanding personality, purpose, timing, healing, destiny, and the unseen forces that shape human experience. Some focus on birth, some on energy, some on divine order, and some on the way intention interacts with reality. Together, they form a vast spiritual map that many people use to better understand themselves, their path, and their connection to the universe.</p>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 1: Identity & Blueprint Systems ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Identity &amp; Blueprint Systems</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Zodiac / Astrology (Western)</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Western astrology is one of the most recognized spiritual systems in the world. It is based on the idea that the positions of the sun, moon, planets, and zodiac signs at the moment of birth create a symbolic blueprint of a person's personality, emotional nature, strengths, lessons, and life themes. Most people begin with their sun sign, but a full natal chart goes much deeper, including the moon sign, rising sign, houses, aspects, and planetary placements. Together, these create a much fuller picture of identity and life direction.</p>
+          <p>Western astrology has ancient roots that reach back to Mesopotamia and later developed through Greek and Hellenistic traditions before spreading widely across cultures. It has endured for thousands of years because it gives people a language for timing, archetypes, relationships, and self-understanding. For many, astrology is not just about prediction. It is about pattern recognition, soul timing, and understanding how cosmic cycles mirror life on earth.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Vedic Astrology (Jyotish)</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Vedic astrology, also known as Jyotish, is an ancient Indian system often translated as the "science of light." It studies the soul's journey through karma, timing, purpose, dharma, relationships, and destiny. While Western astrology often emphasizes psychological identity, Vedic astrology is often approached as a more karmic and predictive system, focusing on planetary periods, life cycles, spiritual lessons, and the unfolding of one's path over time.</p>
+          <p>A major difference between Western and Vedic astrology is that Vedic astrology traditionally uses the sidereal zodiac, which is based more directly on the observable constellations. It also places strong emphasis on lunar mansions, planetary dashas, and karmic interpretation. Many spiritual seekers are drawn to Jyotish because it feels deeply connected to fate, soul growth, and divine timing. Historically, Greek astrology influenced Indian traditions through Sanskrit translations in the 2nd and 3rd centuries CE, after which Vedic astrology continued to develop into its own rich and highly respected system.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Human Design</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Human Design is a modern spiritual framework that blends multiple systems into a single bodygraph. It draws from astrology, the I Ching, chakra philosophy, Kabbalah, and concepts presented as linked to modern science. Its purpose is to help people understand how they are designed to move through life, make decisions, use energy, and align with their natural way of being.</p>
+          <p>Human Design introduces concepts like energy type, strategy, authority, centers, profile lines, channels, and gates. Many people use it to understand why certain patterns keep repeating in their lives, why certain environments drain them, and what it means to act in alignment rather than resistance. The system is widely associated with Ra Uru Hu, who presented it after a transformative experience in 1987. For many seekers, Human Design offers a practical spiritual map for authenticity, self-trust, and right timing.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Numerology</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Numerology is the study of spiritual meaning in numbers. It is based on the idea that numbers carry frequencies and that those frequencies shape personality, gifts, lessons, life purpose, and cycles of development. The most well-known number is the Life Path number, which is often seen as the main energetic theme of a person's life. Other important numbers include the Destiny number, Soul Urge number, Personality number, and Personal Year cycles.</p>
+          <p>People are drawn to numerology because numbers seem to appear everywhere in life, from birthdays to names to repeating patterns. Numerology offers a way to decode those patterns and see life as a meaningful design rather than random movement. In this system, numbers become spiritual symbols that reveal tendencies, opportunities, and inner motivations.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Gene Keys</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Gene Keys is a contemplative wisdom system centered on transformation, self-realization, and unlocking one's higher potential. It is closely connected to Human Design and was developed by Richard Rudd, who drew deeply from Human Design while creating a more meditative and poetic framework. The Gene Keys system guides people through patterns of shadow, gift, and siddhi, showing how lower expressions of energy can be transformed into higher expressions of consciousness.</p>
+          <p>Many people resonate with Gene Keys because it feels less mechanical and more mystical. It invites reflection rather than labeling. Instead of simply telling you who you are, it encourages inner contemplation and a gradual unfolding of your deeper truth. It is often used as a spiritual path of inner refinement, emotional maturity, and awakening to purpose.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Enneagram</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>The Enneagram is a nine-point personality map that many people use not only for self-understanding but also for spiritual growth. Each type reflects a core worldview, a core fear, and a pattern of coping, desire, defense, and growth. From a spiritual angle, the Enneagram is powerful because it shows how the ego organizes itself, where it becomes stuck, and what it means to return to a more whole and awakened state.</p>
+          <p>Rather than reducing a person to a label, the Enneagram can be used as a mirror. It can help reveal the protective patterns that once kept a person safe but may now limit them. Many people use it as part of shadow work, emotional healing, relationship insight, and spiritual development. The modern Enneagram of personality grew through the teachings of Oscar Ichazo and Claudio Naranjo, while the enneagram symbol itself is often linked to older esoteric traditions and was reintroduced in modern spiritual circles through Gurdjieff's work.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Soul Origins / Starseeds</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>The idea of soul origins or starseeds is based on the belief that some souls carry a deeper resonance with cosmic lineages, star systems, or non-earthly spiritual origins. Within this framework, people may identify with origins such as Pleiadian, Arcturian, Sirian, Andromedan, Lyran, and more. These identities are often connected to a feeling of being different, having a mission, sensing another home beyond earth, or carrying a role tied to healing, teaching, awakening, or transformation.</p>
+          <p>Many people are drawn to starseed teachings because they provide language for inner knowing that may have been difficult to explain. It can bring comfort, purpose, and a sense of belonging to those who have long felt spiritually unusual or deeply tuned to energies beyond ordinary life. In this perspective, soul origin is not about escaping earth. It is about remembering why the soul came here.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Past Life / Reincarnation</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Past life and reincarnation beliefs are centered on the idea that the soul does not live only once. Instead, it moves through multiple lifetimes, carrying memory, karma, gifts, fears, unfinished lessons, and soul connections across time. In this view, present life experiences are not random. Certain relationships, emotional patterns, fears, talents, and deep attractions may be echoes of previous incarnations.</p>
+          <p>Many people use past life work to understand recurring themes in their current life. It may help explain unexplainable bonds, irrational fears, spiritual gifts, or a strong connection to certain time periods, places, or cultures. Reincarnation gives a larger context to human growth, allowing life to be seen as part of a long soul journey rather than a single isolated chapter.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 2: Signs, Symbols & Sacred Form ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Signs, Symbols &amp; Sacred Form</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Angel Numbers</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Angel numbers are repeating number patterns that many people interpret as signs, confirmations, or messages from the spiritual realm. Numbers like 111, 222, 333, 444, 555, 777, and 1111 are often associated with alignment, transition, support, awakening, reassurance, or divine communication. The meaning of each number may vary, but the central idea is that repetition carries intention.</p>
+          <p>For many people, angel numbers appear during important decisions, emotional turning points, periods of spiritual awakening, or moments when reassurance is needed. They are often seen as reminders that life is speaking all the time through symbols, timing, and synchronicity. In this way, numbers become more than mathematics. They become messages.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Sacred Geometry</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Sacred geometry is the belief that certain shapes, ratios, and forms reflect the underlying order of creation. It sees geometry not just as mathematics, but as the visual language of the universe. Symbols such as the Flower of Life, Metatron's Cube, the Seed of Life, spirals, and crystalline forms are often viewed as blueprints of harmony, consciousness, and divine design.</p>
+          <p>Many people are drawn to sacred geometry because it bridges the visible and the invisible. A pattern can feel both mathematical and mystical at the same time. These forms appear in art, architecture, mandalas, spiritual teachings, and meditative practices because they are believed to reflect balance, unity, proportion, and the hidden intelligence woven into existence.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Chakras</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Chakras are energy centers within the body that are often understood as points where physical, emotional, mental, and spiritual forces meet. The most widely known model is the seven-chakra system, moving from the root at the base of the spine to the crown above the head. Each chakra is associated with specific life themes such as safety, creativity, willpower, love, communication, intuition, and spiritual connection.</p>
+          <p>In spiritual practice, chakra work is often used to understand imbalance and alignment. A person may feel grounded or ungrounded, open-hearted or guarded, expressive or blocked, intuitive or disconnected. Chakra practices can include meditation, sound, breathwork, color work, movement, energy healing, and focused awareness. The concept of chakras has deep roots in Indian spiritual traditions, and the popular seven-center model known today became especially influential in later interpretations and modern spiritual practice.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 3: Manifestation, Mind & Reality ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Manifestation, Mind &amp; Reality</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Law of Attraction</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>The Law of Attraction teaches that like attracts like and that thoughts, emotions, and energetic states influence what a person draws into life. In this view, attention is creative. What is focused on consistently begins to organize experience in a similar direction. Many people use this principle to call in love, success, peace, healing, clarity, and abundance by intentionally shifting their state of being.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Law of Assumption</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>The Law of Assumption goes deeper into identity. Rather than simply attracting what you want, it teaches that life reflects what you assume to be true. According to this view, your self-concept, inner beliefs, and emotional certainty begin shaping the outer world. It places great power on embodiment and the inner decision that something is already yours.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Scripting &amp; Visualization</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Scripting and visualization are practices used to impress the subconscious mind and clarify desire. Scripting usually involves writing as if the desired life has already happened. Visualization involves imagining with detail, emotion, and sensory depth. Both are used to strengthen belief, focus intention, and emotionally align the inner world with the outer life one wants to create.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Timeline &amp; Reality Shifting</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Timeline shifting is the idea that reality is not singular and fixed in the way it appears. In this spiritual framework, each choice, belief, emotional state, and identity pattern can move a person toward different versions of life. Reality shifting is often approached as a practice of aligning with the version of self and life that already exists energetically and then stepping into it through focus, assumption, and consciousness.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Quantum Spirituality</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Quantum spirituality is the belief that consciousness participates in reality more deeply than most people realize. In spiritual language, it often points to the idea that observation, intention, awareness, and energy all matter. Many people use this framework to describe a universe that is responsive, interconnected, and less mechanical than it first appears.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Subconscious Reprogramming</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Subconscious reprogramming focuses on changing the inner patterns that shape identity, expectation, and behavior. It is based on the understanding that many life outcomes are influenced by repeated beliefs, emotional imprints, and internal stories formed over time. People use methods such as repetition, visualization, self-observation, meditation, and intentional language to shift these patterns.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Affirmations</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Affirmations are repeated statements used to build new inner beliefs and reinforce desired realities. When practiced consistently, they can help a person redirect attention, regulate identity, and choose a more intentional internal dialogue. The power of affirmations lies not just in repeating words, but in using language as a tool to reshape expectation and self-concept.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 4: Inner Work & Healing ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Inner Work &amp; Healing</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Shadow Work</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Shadow work is the practice of turning toward the hidden, rejected, wounded, or unconscious parts of the self. It asks a person to face what has been avoided, buried, or denied and to bring compassion and honesty into those spaces. Rather than being about darkness for its own sake, shadow work is about integration. It is a path toward wholeness.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Inner Child Healing</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Inner child healing focuses on the younger emotional self that still lives within the adult psyche. It works with early experiences, emotional wounds, unmet needs, and patterns of protection formed in childhood. Many people find that reconnecting with the inner child softens self-judgment, increases compassion, and helps restore a sense of innocence, trust, play, and emotional safety.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 5: Earth-Based & Ritual Practices ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Earth-Based &amp; Ritual Practices</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Crystals &amp; Crystal Healing</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Crystal healing is based on the idea that stones and minerals carry distinct energetic properties. Different crystals are often associated with different qualities such as grounding, protection, love, intuition, cleansing, abundance, or clarity. Many people keep crystals near them, meditate with them, place them in rooms, or use them as ritual objects to support intention and energetic alignment.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Herbal Magic / Plant Spirituality</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Plant spirituality honors herbs, flowers, roots, and trees as carriers of wisdom, medicine, and energy. Across many traditions, plants are understood as living allies that support healing, ritual, cleansing, dreaming, protection, and connection to the earth. Herbal magic often includes teas, baths, smoke, oils, altar work, blessings, and symbolic plant correspondence.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Moon Phases</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Moon work is based on the belief that lunar cycles influence energy, emotion, growth, release, and intuition. New moons are often connected with planting intentions, while full moons are associated with illumination, culmination, cleansing, and release. Many people align rituals, journaling, rest, and manifestation practices with lunar timing to move in harmony with natural cycles.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Elemental Work</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Elemental work centers on the spiritual qualities of earth, air, fire, and water. Earth represents stability, grounding, and form. Air represents thought, breath, insight, and communication. Fire represents transformation, desire, action, and will. Water represents emotion, intuition, cleansing, and flow. Working with the elements is a way of understanding both nature and the inner self.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Manifestation Rituals</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Manifestation rituals combine intention with symbolic action. These may include candle work, writing practices, prayer, moon rituals, altar offerings, cleansing, meditation, and spoken declarations. The power of ritual lies in helping the mind, body, and spirit move into coherence around a desire or decision.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Witchcraft (Modern / Eclectic)</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Modern witchcraft is often a highly personal spiritual path built around intention, ritual, nature, energy, cycles, symbolism, and self-empowerment. Eclectic witchcraft allows a person to draw from many traditions and shape a path that feels personally aligned. For many, it is less about dogma and more about relationship with the natural world, spiritual forces, and personal power.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Wicca</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Wicca is a more structured earth-centered spiritual path that often includes ritual practice, seasonal observances, lunar work, elemental balance, and reverence for the divine in masculine and feminine forms. It usually has more defined traditions, ethics, and ceremonial forms than eclectic witchcraft, though paths within Wicca can still vary.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Feng Shui</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Feng Shui is the art of arranging space to support harmony, flow, and balance. It works with the idea that environments carry energy and that the placement of objects, furniture, entrances, light, and movement can affect clarity, abundance, emotional comfort, and overall life flow. It is often used to create spaces that feel peaceful, intentional, and energetically supportive.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Space Energy Cleansing</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Space cleansing is the practice of clearing stagnant, heavy, or unwanted energy from a room, building, or object. Many people use smoke, sound, prayer, herbs, intention, or sacred tools to reset the feeling of a space. It is often done after conflict, illness, stress, moving into a new place, or during major personal transitions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 6: Guidance, Divine Contact & Higher Realms ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Guidance, Divine Contact &amp; Higher Realms</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Spirit Guides</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Spirit guides are often understood as nonphysical helpers who support a person's growth, protection, clarity, and purpose. Some people experience guides as ancestors, teachers, higher beings, or loving presences that communicate through intuition, dreams, symbolism, or synchronicity.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Guardian Angels</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Guardian angels are often viewed as protective spiritual beings assigned to watch over and guide individuals through life. Many people connect angelic presence with comfort, rescue, reassurance, and subtle signs that appear during uncertain or emotionally intense times.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Channeling</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Channeling is the practice of receiving information from beyond the ordinary conscious mind. This may be understood as communication with higher self, spirit, guides, divine intelligence, or other beings. Some forms are quiet and intuitive, while others are formal and trance-based. The common thread is the opening of a receptive inner state.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Akashic Records</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>The Akashic Records are often described as a subtle field of memory containing the energetic imprint of all souls, thoughts, actions, and events. People who work with the Akashic Records often seek clarity on life purpose, karmic patterns, soul contracts, past life connections, and spiritual lessons. The term is closely tied to occult and Theosophical thought and is rooted in the concept of Akasha as a subtle spiritual substance or ether-like field.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 7: Consciousness Practices & Altered States ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Consciousness Practices &amp; Altered States</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Meditation</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Meditation is one of the foundational spiritual practices across the world. It creates space to quiet the noise of the surface mind and become more present, observant, and inwardly clear. Whether guided, silent, transcendental, breath-based, or devotional, meditation can deepen intuition, strengthen inner peace, and support a more connected state of being. Research also links meditation and mindfulness practices with benefits related to stress, emotional regulation, and attention.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Astral Projection</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Astral projection is the belief that consciousness can travel beyond the physical body. People who explore this path often describe sensations of floating, traveling, observing from above, or entering subtle planes of experience. It is commonly approached through deep relaxation, sleep-adjacent states, energetic awareness, and intentional practice.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Lucid Dreaming</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Lucid dreaming happens when a person becomes aware that they are dreaming while still inside the dream. For many spiritual practitioners, this opens a doorway into conscious dream exploration, symbolic work, inner guidance, and expanded self-awareness. Some people also experience a degree of control within the dream environment. Sleep researchers commonly define lucid dreams as dreams in which the dreamer knows they are dreaming.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Psychedelic Spirituality</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Psychedelic spirituality explores altered states as a pathway into insight, ego softening, symbolic vision, emotional release, and direct encounter with the mystery of consciousness. Many people describe these experiences as deeply revealing, sacred, or life-changing, especially when approached with intention, preparation, and integration.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Fasting for Spiritual Clarity</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Fasting has long been used as a spiritual discipline in many traditions. Beyond its physical dimension, it is often practiced to clear distraction, heighten awareness, strengthen discipline, deepen prayer, and create more space to hear the inner voice more clearly. It is often associated with purification, surrender, and spiritual focus.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Silence Retreats</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Silence retreats are dedicated periods of reduced speech, inward attention, and contemplative stillness. By removing constant talking, noise, and external stimulation, many people find that deeper layers of thought, emotion, and awareness rise to the surface. Silence can become a doorway to insight, regulation, and inner listening.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Yoga (Spiritual Side)</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Beyond posture and flexibility, yoga is fundamentally a spiritual path of union. It works with breath, awareness, discipline, ethics, devotion, and presence. In its deeper form, yoga is about aligning body, mind, and consciousness and moving toward inner steadiness, spiritual clarity, and a more integrated life.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 8: Living Systems & Nature ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Living Systems &amp; Nature</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Food, Earth &amp; Divine Intelligence</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Food can be understood as more than calories. It can be approached as living relationship. Plants draw from sunlight, water, carbon dioxide, and minerals in the earth and transform them into energy-rich compounds that sustain life. Fruits and vegetables are rich in vitamins, minerals, fiber, and phytochemicals, and diets rich in them are strongly associated with broad health benefits. For many people, eating foods close to their natural state feels spiritually important because those foods still carry the vitality of sun, soil, water, and growth.</p>
+          <p>This is one reason many spiritual traditions place strong emphasis on freshness, gratitude, seasonality, and food quality. Raw fruits and vegetables are often valued not only for nourishment, but because they feel vibrant, water-rich, mineral-rich, and energetically alive. In the same broader conversation, some research has found that grass-fed beef can contain higher levels of omega-3 fatty acids, conjugated linoleic acid, vitamin E, beta-carotene-related compounds, and phytochemical-derived antioxidants than grain-fed beef.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Science &amp; Living Systems</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Many people are drawn to the idea that life responds to intention, frequency, environment, and relationship. Water is often at the center of this conversation because water is everywhere in life, everywhere in the body, and deeply responsive to its surroundings. Some researchers have explored whether intention or sound may influence water in measurable ways, while many spiritual communities see water as a carrier of memory, emotion, and energetic imprint.</p>
+          <p>Plant life is another place where people sense deep intelligence in nature. Plants are not passive matter. They constantly respond to light, nutrients, sound, touch, gravity, moisture, and changing conditions. This has led many people to feel that relationship matters, that environments matter, and that living systems are more aware and responsive than modern life often acknowledges. Whether approached through experiment, symbolism, or direct personal observation, the larger point is the same: life appears deeply relational. The energy brought into a room, a meal, a thought, or a moment may matter more than most people are taught to believe.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shelf-divider"></div>
+
+    <!-- ═══════ SHELF 9: Dimensions & The Unified View ═══════ -->
+    <div class="library-shelf">
+      <div class="shelf-label">Dimensions &amp; The Unified View</div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>Dimensions &amp; How They Work</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>In spiritual language, dimensions are often understood as layers of reality or levels of consciousness rather than simply physical locations. They describe different ways of perceiving, experiencing, and embodying existence. Lower dimensions are often associated with density, separation, survival, and heavily material awareness. Higher dimensions are often associated with unity, love, expanded perception, intuition, timelessness, and greater connection to source.</p>
+          <p>This does not mean one dimension is always somewhere else. Many spiritual teachings describe dimensions as overlapping fields of awareness that can be experienced through shifts in consciousness, emotion, intention, and perception. A person may live physically in the same world while internally moving through very different levels of reality. In that sense, dimensions are not only places. They are frequencies of experience.</p>
+          <p>A simple way to understand this is to see consciousness as layered. One layer is concerned with survival and control. Another opens into emotional wisdom. Another begins to perceive symbolism, synchronicity, and the interconnected nature of life. Another moves toward compassion, unity, and deep inner knowing. In this view, spiritual growth is not about escaping the world. It is about becoming able to perceive more of it.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <h3>A Unified View of It All</h3>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="entry-body">
+          <p>Taken together, these systems suggest that life is patterned, meaningful, and interconnected. Some map personality through symbols in the sky. Some map energy in the body. Some map soul lessons through number, archetype, or karmic memory. Some focus on consciousness, some on ritual, some on the unseen world, and some on the relationship between thought, emotion, intention, and experience.</p>
+          <p>The deeper thread running through all of them is the belief that human life is not random. There is design, rhythm, symbolism, and intelligence woven into existence. Western astrology traces back to ancient Mesopotamia and Hellenistic development, while related traditions also spread into India and evolved there over centuries. These teachings have endured because people continue to find meaning in them. They offer language for identity, timing, cycles, healing, and purpose.</p>
+          <p>Psychology often studies personality through behavior, cognition, emotional patterns, and the nervous system. Spiritual systems often study personality through archetype, birth timing, energetic pattern, karmic lesson, and soul design. Many people do not see these as enemies. They see them as different maps of the same mystery. One map looks at the mind. Another looks at meaning. One looks at behavior. Another looks at destiny. Together, they form a wider view of what it means to be human.</p>
+        </div>
+      </div>
     </div>
   </div>
 
