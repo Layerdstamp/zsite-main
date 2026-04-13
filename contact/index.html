@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#020000">
+  <title>Contact | Zoe Lane</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Cormorant Garamond', Georgia, serif;
+      background:#020000; color:#fff;
+      min-height:100vh; overflow-x:hidden;
+      -webkit-tap-highlight-color:transparent;
+      overscroll-behavior:none;
+    }
+
+    .bg-fixed {
+      position:fixed; inset:0; z-index:0;
+      background:linear-gradient(180deg, #0a0a0a 0%, #050505 30%, #020000 60%, #000 100%);
+    }
+    .bg-fixed::after {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse at 50% 0%, rgba(30,30,35,.4) 0%, transparent 60%);
+    }
+    .glow-top {
+      position:fixed; top:-120px; left:50%; transform:translateX(-50%);
+      width:800px; height:400px; z-index:1; pointer-events:none;
+      background:radial-gradient(ellipse at center,
+        rgba(180,220,240,.12) 0%, rgba(140,200,230,.06) 30%,
+        rgba(100,180,220,.03) 50%, transparent 70%);
+      animation:glowPulse 6s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%,100%{ opacity:.6; transform:translateX(-50%) scale(1); }
+      50%{ opacity:1; transform:translateX(-50%) scale(1.08); }
+    }
+
+    .page-nav {
+      position:fixed; top:0; left:0; right:0; z-index:20;
+      padding:28px 28px 18px;
+      display:flex; align-items:center; justify-content:space-between;
+      background:linear-gradient(180deg, rgba(2,0,0,.8) 0%, transparent 100%);
+    }
+    .page-nav .nav-brand {
+      font-family:'Playfair Display', serif;
+      font-size:.97rem; letter-spacing:.3em; text-transform:uppercase;
+      color:rgba(255,255,255,.6); text-decoration:none; transition:color .3s;
+    }
+    .page-nav .nav-brand:hover { color:#fff; }
+    .page-nav .nav-links { display:flex; gap:24px; }
+    .page-nav .nav-links a {
+      font-size:.77rem; letter-spacing:.18em; text-transform:uppercase;
+      color:rgba(255,255,255,.4); text-decoration:none; transition:color .3s;
+    }
+    .page-nav .nav-links a:hover { color:rgba(255,255,255,.8); }
+
+    .content {
+      position:relative; z-index:5;
+      max-width:480px; margin:0 auto;
+      padding:140px 28px 80px;
+      text-align:center;
+    }
+
+    .page-title {
+      font-family:'Playfair Display', serif;
+      font-size:1.8rem; font-weight:400;
+      letter-spacing:.35em; text-transform:uppercase;
+      color:rgba(255,255,255,.85);
+      margin-bottom:12px;
+    }
+    .divider {
+      width:60px; height:1px; margin:0 auto 40px;
+      background:linear-gradient(90deg, transparent, rgba(180,220,240,.4), transparent);
+    }
+    .page-sub {
+      font-size:.78rem; color:rgba(255,255,255,.3); font-style:italic;
+      letter-spacing:.12em; margin-bottom:40px;
+    }
+
+    .contact-form {
+      display:flex; flex-direction:column; gap:22px;
+      text-align:left;
+    }
+    .form-group label {
+      display:block;
+      font-family:'Playfair Display', serif;
+      font-size:.7rem; letter-spacing:.18em; text-transform:uppercase;
+      color:rgba(255,255,255,.4); margin-bottom:8px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width:100%;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:8px;
+      padding:14px 16px;
+      font-family:'Cormorant Garamond', Georgia, serif;
+      font-size:.95rem;
+      color:rgba(255,255,255,.85);
+      outline:none;
+      transition:border-color .3s, background .3s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color:rgba(255,255,255,.15);
+      font-style:italic;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color:rgba(180,220,240,.3);
+      background:rgba(255,255,255,.06);
+    }
+    .form-group textarea {
+      min-height:140px; resize:vertical;
+    }
+    .optional-note {
+      font-size:.6rem; color:rgba(255,255,255,.2);
+      font-style:italic; margin-left:8px;
+    }
+
+    .submit-btn {
+      width:100%;
+      padding:16px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:8px;
+      font-family:'Playfair Display', serif;
+      font-size:.78rem; letter-spacing:.22em; text-transform:uppercase;
+      color:rgba(255,255,255,.7);
+      cursor:pointer;
+      transition:all .3s;
+    }
+    .submit-btn:hover {
+      border-color:rgba(180,220,240,.4);
+      color:rgba(255,255,255,.95);
+      background:rgba(180,220,240,.04);
+    }
+    .submit-btn:active { opacity:.7; }
+
+    .form-status {
+      font-size:.75rem; color:rgba(180,220,240,.6);
+      font-style:italic; text-align:center;
+      min-height:20px;
+    }
+
+    .page-footer {
+      position:relative; z-index:5;
+      text-align:center; padding:40px 20px 30px;
+      border-top:1px solid rgba(255,255,255,.04);
+    }
+    .page-footer span {
+      font-size:.6rem; letter-spacing:.15em; color:rgba(255,255,255,.2);
+    }
+
+    @media (max-width:600px) {
+      .content { padding:120px 20px max(60px, env(safe-area-inset-bottom, 60px)); }
+      .page-title { font-size:1.4rem; letter-spacing:.25em; }
+      .page-nav { padding:max(28px, env(safe-area-inset-top, 28px)) 20px 14px; }
+      .page-nav .nav-links { gap:14px; }
+      .page-nav .nav-links a { font-size:.55rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-fixed"></div>
+  <div class="glow-top"></div>
+
+  <nav class="page-nav">
+    <a class="nav-brand" href="../index.html">Zoe Lane</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="https://layerdstamp.github.io/zsite/art/">Art</a>
+      <a href="../a-look-into-my-life/">My Life</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h1 class="page-title">Contact</h1>
+    <div class="divider"></div>
+    <p class="page-sub">for inquiries, collaborations, and partnerships</p>
+
+    <form class="contact-form" id="contactForm" autocomplete="off">
+      <div class="form-group">
+        <label for="email">Email <span style="color:rgba(180,220,240,.4);">*</span></label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone <span class="optional-note">optional</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
+      </div>
+      <div class="form-group">
+        <label for="name">Name or Company</label>
+        <input type="text" id="name" name="name" placeholder="First & Last or Company" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Send Message</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+  </div>
+
+  <footer class="page-footer">
+    <span>&copy; 2026 Zoe Lane</span>
+  </footer>
+
+  <script>
+    /* Blocked keywords — add spam keywords here */
+    var BLOCKED_KEYWORDS = [];
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var status = document.getElementById('formStatus');
+      var email = document.getElementById('email').value.trim();
+      var name = document.getElementById('name').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var message = document.getElementById('message').value.trim();
+
+      /* Keyword filter */
+      var combined = (name + ' ' + message).toLowerCase();
+      for (var i = 0; i < BLOCKED_KEYWORDS.length; i++) {
+        if (combined.indexOf(BLOCKED_KEYWORDS[i].toLowerCase()) !== -1) {
+          status.textContent = 'Message could not be sent.';
+          status.style.color = 'rgba(240,180,180,.6)';
+          return;
+        }
+      }
+
+      /* Build mailto */
+      var subject = encodeURIComponent('Contact from ' + name);
+      var body = encodeURIComponent(
+        'From: ' + name +
+        '\nEmail: ' + email +
+        (phone ? '\nPhone: ' + phone : '') +
+        '\n\n' + message
+      );
+      window.location.href = 'mailto:zoe@solelyzoelane.com?subject=' + subject + '&body=' + body;
+      status.textContent = 'Opening your email client...';
+      status.style.color = 'rgba(180,220,240,.6)';
+    });
+  </script>
+
+</body>
+</html>
