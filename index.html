@@ -297,15 +297,19 @@
         <span class="link-card__text">a look into my life</span>
         <svg class="link-card__arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a class="link-card" href="https://layerdstamp.github.io/zsite/art/">
+      <a class="link-card" href="https://solelyzoelane.art/">
         <span class="link-card__text">art &amp; design</span>
+        <svg class="link-card__arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="link-card" href="#" id="discordLink">
+        <span class="link-card__text">discord</span>
         <svg class="link-card__arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
 
     <!-- Get Access button -->
     <div style="text-align:center; margin-top:60px; padding-bottom:40px;">
-      <a href="https://layerdstamp.github.io/exclusive-content/" style="
+      <a href="https://solelyzoelane.net/" style="
         display:inline-block;
         padding:16px 36px;
         border:1px solid rgba(255,255,255,.2);
@@ -318,7 +322,7 @@
         text-decoration:none;
         box-shadow:0 0 18px rgba(180,220,240,.06);
         transition:all .3s;
-      ">Get Access</a>
+      ">Relax with Zoe Lane</a>
     </div>
   </div>
   </div>
@@ -329,6 +333,14 @@
       var heroZone = document.querySelector('.hero-zone');
       var scrollHint = document.querySelector('.hero-scroll');
       var ticking = false;
+      var discordLink = document.getElementById('discordLink');
+
+      if (discordLink) {
+        discordLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.alert('Discord link coming soon.');
+        });
+      }
 
       window.addEventListener('scroll', function() {
         if (!ticking) {
