@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#020000">
-  <title>&#10086;&#3834;&#119985;&#119994;&#119890; &#119897;&#119834;&#119899;&#119890;&#3835;&#10086;</title>
+  <title>solelyzoelane.com</title>
+  <meta name="apple-mobile-web-app-title" content="solelyzoelane.com">
   <meta name="description" content="Zoe Lane - links, socials, art &amp; design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -301,7 +302,7 @@
         <span class="link-card__text">art &amp; design</span>
         <svg class="link-card__arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a class="link-card" href="#" id="discordLink">
+      <a class="link-card" href="https://discord.gg/yvagNaQkc" id="discordLink" target="_blank" rel="noopener noreferrer">
         <span class="link-card__text">discord</span>
         <svg class="link-card__arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -333,15 +334,6 @@
       var heroZone = document.querySelector('.hero-zone');
       var scrollHint = document.querySelector('.hero-scroll');
       var ticking = false;
-      var discordLink = document.getElementById('discordLink');
-
-      if (discordLink) {
-        discordLink.addEventListener('click', function(e) {
-          e.preventDefault();
-          window.alert('Discord link coming soon.');
-        });
-      }
-
       window.addEventListener('scroll', function() {
         if (!ticking) {
           requestAnimationFrame(function() {
